@@ -1,0 +1,93 @@
+ * { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+header{
+	font-size:20px;
+	text-align: center;
+	background-color:red;
+}
+
+.container{
+	width:100%;
+	height:80vh;
+}
+
+.chatArea{
+	width:60%;
+	height:65vh;
+	border:solid 2px black;
+	display: inline-block;
+	overflow: scroll;
+	font-size:15px;
+}
+
+.userArea{
+	width:20%;
+	height:60vh;
+	border:solid 2px black;
+	margin-bottom:20px;
+	display: inline-block;
+	float:right;
+	vertical-align: top;
+	overflow: scroll;
+	font-size:12px;
+}
+.messageArea{
+	border:solid 2px black;
+	width:60%;
+	height:20vh;
+	font-size:30px;
+	display: inline-block;
+	margin-bottom:30px;
+
+}
+
+.typing-container{
+	width:100%;
+	display: inline-block;
+	overflow: scroll;
+}
+
+#submit-button{
+	display: inline-block;
+	width:34%;
+	height:20vh;
+	vertical-align: top;
+	font-size:20px;
+
+}
+.users{
+	display: inline-block;
+	margin-left:61%;
+	width:20%;
+	float: right;
+	vertical-align: top;
+}
+.add-user{
+	height:20vh;
+	width:15%;
+	margin-bottom:10px;
+}
+
+.user-name{
+	display: inline-block;
+}
+
+.full-name{
+	display: inline-block;
+}
+
+.status{
+	display: inline-block;
+}
+.another-container{
+	display: inline-block;
+	width:25%;
+	float:right;
+	position:absolute;
+}

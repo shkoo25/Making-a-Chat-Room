@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html ng-app="chatRoomApp">
+  <head>
+    <title>Chat Room</title>
+    <link href="index.css" rel="stylesheet" />
+  </head> 
+  <body>
+
+    <div class = "container">
+    
+        <header> TIY-Front-End Chat </header>
+        <div ng-controller="chatController" class ="chatArea">
+          <div ng-repeat = "text in texts">
+            <div>{{text.user_id}} {{ text.text }}  </div>
+            </div>
+      
+      </div>
+     
+      <div ng-controller ="userAreaController" class = "userArea">
+        <div ng-repeat = "user in users">
+          <div> {{ user.username }} {{ user.status }}</div>
+      </div>
+      </div>
+
+      <div class="another-container">
+        <div ng-controller="userSelectController" class = "userSelect">
+          <strong>Add New User</strong><br>
+           <input type="text" class = "user-name" ng-model="username">User Name
+           <input type= "text" class = "full-name" ng-model="fullname">Full Name
+           <input type= "text" class = "status" ng-model="status">Status
+           <br>
+              <button id="add-user" ng-click="clickAdd()" input type = "submit" value= "Add"/>Add User
+               <div ng-repeat = "water in users">
+                  <div> {{ water.username }}</div>
+               </div>
+        </div>
+      </div>
+
+          <div ng-controller="messageController">
+           <div class = "typing-container">
+          <input type = "textarea" class = "messageArea" ng-model="message" placeholder="Type Here"/>
+          <button id ="submit-button" ng-click="clickEnter()" input type="submit" value ="Submit Button"/> Submit Button
+          <div ng-repeat = "text in texts">
+          <div>{{ text.text }}</div>
+          </div>
+        </div>
+        </div>
+
+    </div>      
+
+   
+    <script src ="libs/underscore.js"></script>
+    <script src="libs/angular.js"></script>
+    <script src="index.js"></script>
+    <script src="libs/moment.js>"></script>
+    
+  </body>
+</html>
