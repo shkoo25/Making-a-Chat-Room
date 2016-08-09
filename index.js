@@ -2,28 +2,28 @@ var app = angular.module("chatRoomApp", [])
 
 	
 
-	app.controller("chatController", function($scope, $http, $interval){
+	app.controller("chatController", ['$scope', '$http', '$interval', function($scope, $http, $interval){
 		
 		var messageUpdate = function(){
 		$http.get("https://tiy-chat-server.herokuapp.com/messages/recent")
 			.success(function(data){ 
 				$scope.texts = data 
 				console.log($scope.texts)
-			})
-		}
+			});
+		};
 		messageUpdate();
 		$interval(messageUpdate, 2000)
 
-	})
+	}]);
 
-	app.controller("userAreaController", function($scope,$http,$interval){
+	app.controller("userAreaController", ['$scope', '$http', '$interval', function($scope,$http,$interval){
 		$http.get("https://tiy-chat-server.herokuapp.com/user")
 		.success(function(data){
 			$scope.users = data
 			console.log($scope.users)
-		})
+		});
 
-	})
+	}]);
 
 	app.controller("messageController", ['$scope', '$http', '$interval', function($scope,$http,$interval){
 
@@ -40,7 +40,7 @@ var app = angular.module("chatRoomApp", [])
 
 	}]);
 
-	app.controller("userSelectController", function($scope,$http,$interval){
+	app.controller("userSelectController", ['$scope', $'http', $'interval', function($scope,$http,$interval){
 
 		$scope.clickAdd = function() {
 			$http.post("https://tiy-chat-server.herokuapp.com/user",{
@@ -50,10 +50,10 @@ var app = angular.module("chatRoomApp", [])
 			})
 			.success(function(data){
 				$scope.user = data
-			})
+			});
 
-		}
-	})
+		};
+	}]);
 
 
 
