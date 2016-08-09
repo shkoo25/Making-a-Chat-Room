@@ -25,7 +25,7 @@ var app = angular.module("chatRoomApp", [])
 
 	})
 
-	app.controller("messageController", function($scope,$http,$interval){
+	app.controller("messageController", ['$scope', '$http', '$interval', function($scope,$http,$interval){
 
 		$scope.clickEnter = function() {
 			$http.post("https://tiy-chat-server.herokuapp.com/message", {
@@ -34,11 +34,11 @@ var app = angular.module("chatRoomApp", [])
 			})
 			.success(function(data){
 				$scope.water = data
-			})
-		}
+			});
+		};
 		
 
-	})
+	}]);
 
 	app.controller("userSelectController", function($scope,$http,$interval){
 
